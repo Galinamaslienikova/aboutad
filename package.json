@@ -1,0 +1,15 @@
+{
+  "name": "zadanie-rekrutacyjne",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assets/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "about ad sp. z o.o.",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "slick-carousel": "^1.8.1"
+  }
+}

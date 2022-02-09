@@ -1,0 +1,565 @@
+/*!
+ * Bootstrap v5.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "bootstrap/customvariables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../node_modules/bootstrap/scss/pagination";
+@import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/progress";
+@import "../../node_modules/bootstrap/scss/list-group";
+@import "../../node_modules/bootstrap/scss/close";
+@import "../../node_modules/bootstrap/scss/toasts";
+@import "../../node_modules/bootstrap/scss/modal";
+@import "../../node_modules/bootstrap/scss/tooltip";
+@import "../../node_modules/bootstrap/scss/popover";
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/spinners";
+@import "../../node_modules/bootstrap/scss/offcanvas";
+@import "../../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+//carusel
+.slick-prev, .slick-next{
+  background: white;
+  width: 64px;
+  height: 64px;
+  z-index: 4;
+  border-radius:50%;
+  @media screen and (max-width:768px) {
+    background-color: transparent;
+    }
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+  background: white;
+}
+.slick-dots{
+  bottom: 30px;
+  li.slick-active{
+    button::before{
+      color:#008530;
+    }
+  } 
+  li{
+    button::before{
+      font-size: 15px;
+      color:#9fffdd;
+    }
+  } 
+}
+.slick-prev:before{
+  content:url('../images/left.png');
+  @media screen and (max-width:768px) {
+    content: '';
+    }
+}
+.slick-next:before{
+  content: url('../images/right.png');
+  @media screen and (max-width:768px) {
+    content: '';
+    }
+}
+
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+//animations
+@keyframes kolo{
+  0%{
+    transform:  rotateZ(0);
+  }
+  50%{
+    transform: rotateZ(180deg);
+  }
+  100%{
+    transform:  rotateZ(360deg);
+  }
+}
+
+@keyframes colorEffect {
+  0% {
+      background: linear-gradient(
+        #008530, #4e6356);
+  }
+  25% {
+    background: linear-gradient(
+      #2f4236, #373b39);
+    }
+    50% {
+      background: linear-gradient(
+        #36794e, #032514);
+      }
+      75% {
+        background: linear-gradient(
+          #29352d, #989c9a);
+        }
+  100% {
+      background: linear-gradient(
+          #484949, #818186);
+  }
+}
+
+
+//styles
+*{
+  a{
+    text-decoration: none;
+  }
+  font-family: 'Roboto';
+}
+//hide element
+.none{
+  display: none;
+}
+
+//header
+header{
+  height: 146px;
+  padding: 0 45px 0 45px;
+  p{
+    margin: 0;
+    z-index: 4;
+  }
+  .burgerBtn{
+    z-index: 4;
+  }
+  .humburger,.humburger2:hover{
+    cursor: pointer;
+  }
+  .burgerOpen{
+    transition: 0.5s;
+    transform: scale(0);
+
+  }
+  .burgerCls{
+    transition: 0.5s;
+    transform: scale(1);
+  }
+
+}
+
+//nav container
+.navCont{
+  position: relative;
+  .active{
+    transform: translateY(0%);
+    @media screen and (max-width:768px) {
+   
+     background-color: #e3e3e3 ;
+    }
+  }
+  #navigation{
+    flex-direction: row;
+    @media screen and (max-width:768px) {
+      flex-direction: column;
+    }
+  }
+  nav{
+    transition: 1s;
+    position: absolute;
+    transform: translateY(-140%);
+    z-index: 3;
+    background-color: #fff;
+    width: 100%;
+    padding: 60px 0 0 45px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 38px;
+    color: #0f7f25;
+    @media screen and (max-width:768px) {
+      height: 100vh;
+      }
+    .navcol{
+      @media screen and (max-width:768px) {
+        height: auto;
+       }
+    }
+    a{
+      color: #0f7f25;
+    }
+    p:hover{
+      cursor:pointer;
+    }
+  }
+}
+
+//oferta
+.oferta{
+  margin-top: 20px;
+  font-weight: 300;
+  .alloe{
+    position: relative;
+    width:100%;
+    height: 700px;
+    z-index: 2;
+    .carusel{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .onePctr{
+      color:red;
+    }
+  }
+  .textAlloe{
+    z-index: 2;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    p{
+      margin: 0;
+    }
+    .title{
+      font-weight: 300;
+      font-size: 72px;
+      line-height: 79px;
+      color: #008530;
+    }
+    .cena{
+      margin-top: 22px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      color: #008530;
+
+    }
+    .alloeBtn{
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 48px;
+      text-align: center;
+      color: #008530;
+      width: 187px;
+      height: 48px;
+      border: 1px solid #008530 ;
+      border-radius: 5px;
+      margin-top: 45px;
+    }
+  }
+}
+
+//test
+.testow{
+  margin-top: 100px;
+  p{
+    margin: 0;
+  }
+  .title{
+    padding: 0 25px 0 25px;
+    height: 48px;
+    background: #0f7f25;
+    border-radius: 7px;
+    font-size: 21px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    display:inline-block;
+    margin-bottom: 20px;
+  }
+  .skladnik{
+    font-weight: 500;
+      font-size: 64px;
+      line-height: 46px;
+      text-align: center;
+      color: #0f7f25;
+  }
+  .light{
+    font-weight: 300;
+    line-height: 74px;
+    margin-top: 16px;
+  }
+  .zdrowe{
+    margin-top: 28px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #000;
+    padding-left: 50px;
+  }
+}
+
+//skladniki
+.skladniki{
+  margin-top: 60px;
+  .sklad{
+    text-align: center;
+    .name{
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 38px;
+      text-align: center;
+      color: #0f7f25;
+      margin-top: 8px;
+      margin-bottom: 12px;
+
+    }
+    .about{
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 32px;
+      text-align: center;
+      color: #000;
+      width: 90%;
+      margin: 0 auto;
+
+    }
+  }
+}
+
+//touch container
+.touch{
+  margin-top: 98px;
+  img{
+    max-width: 100%;
+    @media screen and (max-width:1451px) {
+      border-radius:30px;
+    }
+  }
+  @media screen and (max-width:1451px) {
+    flex-direction: column;
+  }
+  .numbers{
+    text-align: right;
+    @media screen and (max-width:1451px) {
+      text-align: center;
+      margin-bottom: 22px;
+      width: 100%;
+    }
+    margin-bottom: 0;
+    position: relative;
+    .noNumber{
+      top: -9px;
+      left: -11px;
+      z-index: 1;
+      position: absolute;
+      width: 69px;
+      height: 69px;
+      background-color:  #e3e3e3;
+      border-radius:50% ;
+      transform:  rotateZ(0);
+      animation: none;
+      &:hover{
+        animation: kolo 5s linear infinite;
+        border:15px dotted #0f7f25;
+      }
+      @media screen and (max-width:1451px) {
+        display:none;
+      }
+    }
+    .noone{
+      top:39%;
+      left:24%;
+    }
+    .notwo{
+      top: 86%;
+      left: 40%;
+    }
+    .nothree{
+      top:4%;
+      left:52%;
+    }
+    .nofour{
+      top: 79%;
+      left: 84%;
+    }
+    .number{
+      &:hover{
+        cursor: pointer;
+        background: #0f7f25;
+        color: #fff;
+      }
+       z-index: 2;
+        position: absolute;
+        width: 49px;
+        border-radius: 50%;
+        height: 46px;
+        transform:  rotateZ(0);
+        background: #fff;
+        border-radius:50% ;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 46px;
+        text-align: center;
+        color: #0f7f25;
+        transform:  rotateZ(0);      
+    }
+    .one{
+      top:41%;
+      left:25%;
+    }
+    .two{
+      top: 88%;
+      left: 41%;
+    }
+    .three{
+      top:6%;
+      left:53%;
+    }
+    .four{
+      top: 81%;
+      left: 85%;
+    }
+  }
+  .text{
+    padding:0 0 0 10px;
+    border-radius: 0px 16px 16px 0px;
+    background: #c7d9cc;
+    @media screen and (max-width:1451px) {
+      background: white;
+      width: 100%;
+    }
+    opacity: 0.76;
+    @media screen and (max-width:1451px) {
+      padding: 20px 0 20px 20px;
+    }
+    .title_touch{
+      font-weight: 400;;
+      font-size: 34px;
+      line-height: 38px;
+      color: #0f7f25;
+      text-transform: uppercase;
+      margin-bottom:30px;
+
+    }
+    .about_touch{
+      font-weight: 300;;
+       font-size: 18px;
+      line-height: 28px;
+      color: #000;
+      min-height: 252px;
+
+    }
+    .toucPct{
+      img{
+        margin-right: 30px;
+        max-width: 100%;
+      }
+     
+    }
+  }
+}
+
+//contact container
+.contact{
+  margin-top: 88px;
+  .title{
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 74px;
+    text-align: center;
+    color: #0f7f25;
+    margin-bottom: 71px;
+  }
+  .inputName{
+    height: 76px;
+    padding: 0 20px 0 20px;
+    margin-bottom: 47px;
+    @media screen and (max-width:768px) {
+      flex-direction: column;
+      height: auto;
+    }
+    input{
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #d0d0d0;
+      @media screen and (max-width:768px) {
+        margin-bottom: 20px;
+      }
+      &:first-of-type{
+        margin-right: 20px;
+      }
+    }
+  }
+  .inputWiadomosc{
+    height: 249px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    width:100%;
+    padding: 25px 0 0 35px ;
+  }
+  .zgoda{
+    margin-top: 28px;
+    margin-bottom: 40px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000;
+    span{
+      margin-right: 25px;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border: 1px solid #000;
+      font-size: 12px;
+      padding-left: 2px;
+      line-height: 11px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  .submit{
+    max-width: 532px;
+    height: 48px;
+    border-radius: 8px;
+    background: #108530;
+    font-weight: 400;;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    &:hover{
+      font-size: 26px;
+      cursor:pointer;
+      transition: 1s;
+      animation: colorEffect 1s linear infinite;
+    }
+  }
+}
+
+//footer
+footer{
+  margin-top: 100px;
+  img{
+    max-width: 100%;
+  }
+}
